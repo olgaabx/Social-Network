@@ -1,6 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
+  const navigate = useNavigate();
+
+  function onSubmitLogin(e) {
+    e.preventDefault();
+    navigate("/menu");
+  }
+  
+
   return (
     <div id="loginDiv" className="login-container">
       <div className="logo-title-container">
@@ -17,7 +26,7 @@ function Login() {
             
             <input type="password" id="password" placeholder="Contraseña" className="input input-password" required />
 
-            <input type="submit" value="Ingresar" id ="login-button" className="primary-button login-button"/>
+            <input onClick={onSubmitLogin} type="submit" value="Ingresar" id ="login-button" className="primary-button login-button"/>
         </form>
         <section className="icon-container">
           <button id='gmailIcon' className="gmailButton" href='#/home'> 
