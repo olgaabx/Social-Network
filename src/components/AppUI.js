@@ -5,11 +5,13 @@ import { Home } from './Home'
 
 function AppUI() {
   return (
-    <Home>
-        <Navbar />
-        <Post />
-        <SideMenu />
-    </Home>
+    <>
+      <Navbar />
+      <Home>
+          <Post />
+          <SideMenu />
+      </Home>
+    </>
   )
 }
 
