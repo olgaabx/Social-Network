@@ -35,7 +35,7 @@ function Login() {
             id="email" 
             placeholder="Correo electrónico" 
             className="input input-email" 
-            required />
+          />
             
           <input 
             type="passwor
@@ -43,7 +43,7 @@ function Login() {
             id="password" 
             placeholder="Contraseña" 
             className="input input-password" 
-            required />
+          />
 
           <input 
             type="submit" 

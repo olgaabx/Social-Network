@@ -1,0 +1,262 @@
+#task-form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.home-title {
+  display: none;
+}
+
+.section-posting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+  border: 3px solid #22222214;
+  border-radius: 10px;
+  margin-top: 5px;
+  box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
+-webkit-box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
+-moz-box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
+}
+
+#task-description {
+  width: 90%;
+  height: 150px;
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+  resize: none;
+  padding: 25px;
+  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--medium);
+}
+
+.div-button-post {
+  display: flex;
+  /* width: 100%; */
+  margin-left: 60%;
+  margin-bottom: 15px;
+}
+
+.btn-task-save {
+  border: 1px solid #c6c6c6;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  color: #222;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  /* background-color: var(--very-light-blue); */
+  border-radius: 8px;
+  width: 100px;
+  height: 3rem;
+  cursor: pointer;
+  font-size: var(--medium);
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* POST HOME */
+
+/* publicación  */
+.tweet-container {
+  width: 90%;
+  height: auto;
+  border: solid 2px var(--light-gray);
+  border-radius: 10px;
+  border-top: none;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 35px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 17px 22px 12px -17px rgba(31,31,31,0.19);
+-webkit-box-shadow: 17px 22px 12px -17px rgba(31,31,31,0.19);
+-moz-box-shadow: 17px 22px 12px -17px rgba(31,31,31,0.19);
+}
+
+.tweet-photo {
+  display: flex;
+}
+
+.containerP {
+  display: flex;
+  align-items: center;
+  color: #aaaaaa;
+}
+
+.tweet-date{
+  margin-left: 3%;
+}
+
+.tweet-photo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.name-btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.tweet-text {
+  /* display: inline-block; */
+  font-size: var(--medium);
+  text-decoration: none;
+}
+
+.name {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.text-content {
+  height: 100px;
+  margin: 5px;
+}
+
+.text {
+  /* display: block; */
+  font-size: var(--medium);
+  margin: 10px 10px 25px 10px;
+  text-align: justify;
+  line-height: 2.5rem;
+}
+.containerIcons{
+  display: flex;
+  /* justify-content: space-around; */
+}
+.heart-icon {
+  width: 16px;
+  height: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+.bi-pencil-square{
+  cursor: pointer;
+}
+.bi-trash3{
+  cursor: pointer;
+}
+.tweet-icons {
+  display: flex;
+
+  width: 50%;
+  align-items: center;
+  flex-direction: row;
+}
+/* contenedor like y contador*/
+.containerLike{
+  display: flex;
+  align-items: center;
+}
+.heartLike{
+  border-right: 50px;
+}
+.tweet-icons span i {
+  width: 30px;
+  height: 30px;
+}
+
+.fi-rs-edit{
+  width: 50px;
+  height: 50px;
+}
+
+/* BOTÓN DE PUBLICAR */
+
+.tweet-bottom {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 65px;
+  right: 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 50%;
+  box-shadow: #000000;
+}
+
+/* Modal para editar post*/
+/*CONTENENDOR DE TODO EL MODAL EDIT*/
+.containerPostEdit {
+  background-color: #ffffff;
+  width: 80%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+  flex-direction: column;
+}
+
+/*CABEZARA DEL MODAL EDIT*/
+.headerPostEdit {
+  display: flex;
+  width: 90%;
+  height: 10%;
+  align-items: center;
+  border-bottom: solid 2px var(--light-gray);
+  padding-bottom: 20px;
+  margin-bottom: 2%;
+}
+
+.headerpost {
+  width: 250px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.close {
+  display: flex;
+}
+
+.photoEdit {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#editModal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(243, 240, 240, 0.473);
+}
+
+/*tratando de hacer scroll en la barra*/
+.postEdition {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerTextarea {
+  margin: 5px;
+  width: 90%;
+  height: 150px;
+  border: 1px solid #222;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.postDescription {
+  background-color: #ffffff;
+  width: 90%;
+  height: 90%;
+  margin: 5px;
+  border: none;
+  outline: none;
+  resize: none;
+}

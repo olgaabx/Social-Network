@@ -1,3 +1,5 @@
+import './SideMenu.css'
+
 function SideMenu() {
   return (
     <di class="lateral-menu-container">
