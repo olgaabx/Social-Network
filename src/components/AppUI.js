@@ -8,8 +8,8 @@ function AppUI() {
     <>
       <Navbar />
       <Home>
-        <Post />
         <SideMenu />
+        <Post />
       </Home>
     </>
   )

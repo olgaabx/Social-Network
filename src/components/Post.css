@@ -1,34 +1,28 @@
-#task-form {
-  width: 100%;
-  margin-top: 20px;
+.posts-container {
+  width: 75%;
 }
-
 .home-title {
-  display: none;
+  display: block;
+  font-size: var(--large);
+  margin: 20px 0 30px 30px;
+  color: var(--hard-green);
 }
-
-.section-posting {
+.posting-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
-  margin: 0 auto;
-  border: 3px solid #22222214;
-  border-radius: 10px;
-  margin-top: 5px;
-  box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
--webkit-box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
--moz-box-shadow: 7px 10px 47px -16px rgba(252,0,0,0.38);
+  margin-top: 20px;
+  border: 1px solid #eff3f4;
+  border-width: 1px 1px 1px 0;
 }
-
 #task-description {
-  width: 90%;
-  height: 150px;
+  width: 95%;
+  overflow: auto;
   border: none;
   margin-bottom: 10px;
   outline: none;
   resize: none;
-  padding: 25px;
+  padding-top: 15px;
   font-family: 'Averia Serif Libre', cursive;
   font-family: 'Roboto', sans-serif;
   font-size: var(--medium);
@@ -42,19 +36,16 @@
 }
 
 .btn-task-save {
-  border: 1px solid #c6c6c6;
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
-  color: #222;
-  background-color: #f8f8f8;
-  cursor: pointer;
-  /* background-color: var(--very-light-blue); */
-  border-radius: 8px;
-  width: 100px;
+  width: 10rem;
   height: 3rem;
-  cursor: pointer;
+  color: #ffffff;
+  background-color: #00ba7c;
   font-size: var(--medium);
   font-weight: bold;
   margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
 }
 
 /* POST HOME */
@@ -259,4 +250,10 @@
   border: none;
   outline: none;
   resize: none;
+}
+
+@media (max-width: 711px) {
+  .home-title {
+    display: none;
+  }
 }

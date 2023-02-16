@@ -3,19 +3,18 @@ import "./Post.css";
 function Post() {
 	return (
 		<div className="posts-container">
-			{/* CONTENEDOR DE LAS PUBLICACIONES  */}
 			<div>
-				<h3 className="home-title">HOME</h3>
+				<h3 className="home-title">Home</h3>
 			</div>
 			<form id="task-form">
-				<div className="section-posting">
+				<div className="posting-container">
 					<textarea
 						id="task-description"
 						rows="3"
 						placeholder="¿Qué te gustaría compartirnos hoy?"
 					></textarea>
 					<div className="div-button-post">
-						<button className="btn-task-save">Publicar</button>
+						<button className="btn-task-save">Tweet</button>
 					</div>
 				</div>
 			</form>
