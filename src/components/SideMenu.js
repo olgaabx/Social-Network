@@ -15,10 +15,6 @@ function SideMenu() {
 
 			<div className="logout-profile">
 				<a href='' id="logOut">Log out</a>
-				<img
-					src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png"
-					alt=""
-				/>
 			</div>
 		</div>
 	);
