@@ -1,13 +1,13 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  function onSubmitLogin(e) {
-    e.preventDefault();
-    navigate("/home");
-  }
+  // function onSubmitLogin(e) {
+  //   e.preventDefault();
+  //   navigate("/home");
+  // }
   
 
   return (
@@ -28,7 +28,7 @@ function Login() {
         <form 
           className="form" 
           id="form"
-          onSubmit={onSubmitLogin}
+          // onSubmit={onSubmitLogin}
         >
           <input 
             type="email" 
