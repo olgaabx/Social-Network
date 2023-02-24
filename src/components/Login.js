@@ -1,14 +1,29 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from '../firebase/config';
 import './Login.css';
 
 function Login() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // function onSubmitLogin(e) {
-  //   e.preventDefault();
-  //   navigate("/home");
-  // }
-  
+  const onSubmitLogin = (e) => {
+    e.preventDefault();
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/home");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  }
 
   return (
     <div id="loginDiv" className="login-container">
@@ -28,13 +43,15 @@ function Login() {
         <form 
           className="form" 
           id="form"
-          // onSubmit={onSubmitLogin}
+          onSubmit={onSubmitLogin}
         >
           <input 
             type="email" 
             id="email" 
             placeholder="Correo electrónico" 
-            className="input input-email" 
+            className="input input-email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
             
           <input 
@@ -42,7 +59,9 @@ function Login() {
             d" 
             id="password" 
             placeholder="Contraseña" 
-            className="input input-password" 
+            className="input input-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <input 
