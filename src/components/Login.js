@@ -1,6 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from '../firebase/config';
+import { 
+  getAuth, 
+  signInWithEmailAndPassword, 
+  signInWithPopup, 
+  GoogleAuthProvider,
+  provider
+} from '../firebase/config';
 import './Login.css';
 
 function Login() {
@@ -21,6 +27,29 @@ function Login() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+      });
+  }
+
+  const onClickGoogle = () => {
+
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        navigate("/home");
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
       });
   }
 
@@ -51,7 +80,7 @@ function Login() {
           <input 
             type="email" 
             id="email" 
-            placeholder="Correo electrónico" 
+            placeholder="Email address" 
             className="input input-email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -61,7 +90,7 @@ function Login() {
             type="passwor
             d" 
             id="password" 
-            placeholder="Contraseña" 
+            placeholder="Password" 
             className="input input-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -80,6 +109,7 @@ function Login() {
           <button 
             id='gmailIcon' 
             className="gmailButton"
+            onClick={onClickGoogle}
           > 
             <img 
               src="https://sugope.vteximg.com.br/arquivos/iconGoogle.svg?v=637677744074800000" 
@@ -90,14 +120,14 @@ function Login() {
         </div>
           <p 
           className="login-register-text">
-            ¿No tienes una cuenta?
+            Don't have an account?
           </p>
           <button 
           className="link" 
           id="registrate"
           onClick={onClickSignUp}
           > 
-            Regístrate
+            Sign up
           </button>
       </div>
     </div>

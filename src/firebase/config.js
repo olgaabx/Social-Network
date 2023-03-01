@@ -2,7 +2,9 @@ import { initializeApp } from 'firebase/app';
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword 
+  signInWithEmailAndPassword,
+  signInWithPopup, 
+  GoogleAuthProvider
 } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
@@ -22,4 +24,14 @@ const db = getFirestore(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-export { auth, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+const provider = new GoogleAuthProvider();
+
+export { 
+  auth, 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  provider,
+  signInWithPopup, 
+  GoogleAuthProvider
+};
