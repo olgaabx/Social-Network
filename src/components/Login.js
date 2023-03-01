@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from '../firebase/config';
+import { getAuth, signInWithEmailAndPassword } from '../firebase/config';
 import './Login.css';
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -21,8 +21,11 @@ function Login() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
       });
+  }
+
+  const onClickSignUp = () => {
+    navigate("/signup")
   }
 
   return (
@@ -71,8 +74,9 @@ function Login() {
             className="primary-button login-button"/>
         </form>
 
-        <section 
-          className="icon-container">
+        <div 
+        className="icon-container"
+        >
           <button 
             id='gmailIcon' 
             className="gmailButton"
@@ -83,8 +87,18 @@ function Login() {
             />
             Ingresa con Google 
           </button>
-        </section>
-          <p className="login-register-text">¿No tienes una cuenta? <a className="link" id="registrate" href="#/registro"> Regístrate</a></p>
+        </div>
+          <p 
+          className="login-register-text">
+            ¿No tienes una cuenta?
+          </p>
+          <button 
+          className="link" 
+          id="registrate"
+          onClick={onClickSignUp}
+          > 
+            Regístrate
+          </button>
       </div>
     </div>
   )
